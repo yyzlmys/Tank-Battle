@@ -17,7 +17,7 @@ public:
 
 	template<typename... Args>
 	void Send(MESSAGE message, Messager* receiver, Args... args);
-	void Send(MESSAGE message) {};
+	void Send(MESSAGE message) {}
 };
 
 template<typename... Args>

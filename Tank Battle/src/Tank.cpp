@@ -5,7 +5,7 @@
 #include"acllib.h"
 #include<string>
 
-struct SHAPE tkshape[4] =
+struct SHAPE Tank::tkshape[4] =
 {
 	{
 		0,0,1,0,0,

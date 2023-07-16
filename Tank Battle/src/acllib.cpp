@@ -307,7 +307,6 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
-//
 void initWindow(const char *wndName, int x, int y, int width, int height)
 {
 	RECT rect;

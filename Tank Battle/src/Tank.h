@@ -15,8 +15,6 @@ struct SHAPE
 	MOVE next2;
 };
 
-extern struct SHAPE tkshape[4];
-
 class Tank :public GameObject
 {
 	struct Lastpos
@@ -43,6 +41,7 @@ class Tank :public GameObject
 	int fire_key;
 	bool ifpaintscore = false;
 	std::vector<Boom*> booms = std::vector<Boom*>(5, nullptr);
+	static struct SHAPE tkshape[4];
 public:
 	static enum CAMP
 	{
