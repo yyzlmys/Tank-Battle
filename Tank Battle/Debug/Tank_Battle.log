@@ -1,0 +1,31 @@
+﻿  acllib.cpp
+  Boom.cpp
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Messager.h(15,3): warning C4091: “static ”: 没有声明变量时忽略“Messager::MESSAGE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Game.h(39,3): warning C4091: “static ”: 没有声明变量时忽略“Game::STATE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\GameObject.h(28,3): warning C4091: “static ”: 没有声明变量时忽略“GameObject::GOTYPE”的左侧
+  Game.cpp
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Messager.h(15,3): warning C4091: “static ”: 没有声明变量时忽略“Messager::MESSAGE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Game.h(39,3): warning C4091: “static ”: 没有声明变量时忽略“Game::STATE”的左侧
+  GameObject.cpp
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Messager.h(15,3): warning C4091: “static ”: 没有声明变量时忽略“Messager::MESSAGE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Game.h(39,3): warning C4091: “static ”: 没有声明变量时忽略“Game::STATE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\GameObject.h(28,3): warning C4091: “static ”: 没有声明变量时忽略“GameObject::GOTYPE”的左侧
+  main.cpp
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Messager.h(15,3): warning C4091: “static ”: 没有声明变量时忽略“Messager::MESSAGE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Game.h(39,3): warning C4091: “static ”: 没有声明变量时忽略“Game::STATE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\GameObject.h(28,3): warning C4091: “static ”: 没有声明变量时忽略“GameObject::GOTYPE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Tank.h(51,3): warning C4091: “static ”: 没有声明变量时忽略“Tank::CAMP”的左侧
+  Tank.cpp
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Messager.h(15,3): warning C4091: “static ”: 没有声明变量时忽略“Messager::MESSAGE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Game.h(39,3): warning C4091: “static ”: 没有声明变量时忽略“Game::STATE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\GameObject.h(28,3): warning C4091: “static ”: 没有声明变量时忽略“GameObject::GOTYPE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Tank.h(51,3): warning C4091: “static ”: 没有声明变量时忽略“Tank::CAMP”的左侧
+  Target.cpp
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Messager.h(15,3): warning C4091: “static ”: 没有声明变量时忽略“Messager::MESSAGE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Game.h(39,3): warning C4091: “static ”: 没有声明变量时忽略“Game::STATE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\GameObject.h(28,3): warning C4091: “static ”: 没有声明变量时忽略“GameObject::GOTYPE”的左侧
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Target.cpp(24,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  正在生成代码...
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Target.cpp(42): warning C4715: “Target::collide_check”: 不是所有的控件路径都返回值
+C:\2213512闫永昭\新建文件夹\tank_battle\src\Boom.cpp(60): warning C4715: “Boom::collide_check”: 不是所有的控件路径都返回值
+  Tank_Battle.vcxproj -> C:\2213512闫永昭\新建文件夹\tank_battle\Debug\Tank_Battle.exe
