@@ -10,7 +10,7 @@
 
 这是坦克大战1.0版本，运用c++11的新特性，如可变参数列表，包装器绑定器等，从而构建了较为完美的类间接口，继承与多态贯穿始终，真正实现了高内聚、低耦合。  
 
-在最终版本里，有几个最顶端或者说最基础的类，分别是Game,Keymanager,Messager。Game类管理游戏场景的加载切换，Keymanager类负责其他类的键盘事件函数注册，Messager类负责类间的通信。而GameObject类是所有游戏物体（Tank,Boom,Target）的父类，其成员属性是这些游戏物体的共有属性。  
+在最终版本里，有几个重要的类，分别是Game,Keymanager,Messager。Game类管理游戏场景的加载切换，Keymanager类负责其他类的键盘事件函数注册，Messager类负责类间的通信。而GameObject类是所有游戏物体（Tank,Boom,Target）的父类，其成员属性是这些游戏物体的共有属性。  
 
 b站网址——https://www.bilibili.com/video/BV1Ds4y1P7g9/?spm_id_from=333.999.0.0&vd_source=a7c24098714e47cf5b5a9d219a831739
 
