@@ -118,16 +118,25 @@ typedef struct
 
 class KEYMANAGER
 {
+private:
+	KEYMANAGER() = default;
+	KEYMANAGER(const KEYMANAGER& KM) = delete;
+	KEYMANAGER operator=(const KEYMANAGER& KM) = delete;
+	static KEYMANAGER* Keymanager;
 	std::vector<std::pair<std::function<void(int, int)>,int>> keyfuncs;
 public:
+	static KEYMANAGER* getInstance()
+	{
+		return Keymanager;
+	}
+
 	template<typename T>
 	void Register(void(T::* func)(int, int), T* obj)
 	{
 		keyfuncs.push_back(std::make_pair(std::bind(func, obj, std::placeholders::_1, std::placeholders::_2), (int)obj));;
 	}
 
-	template<typename T>
-	void Cancel(T* obj)
+	void Cancel(void* obj)
 	{
 		for (auto it = keyfuncs.begin(); it != keyfuncs.end(); it++)
 		{
@@ -148,10 +157,9 @@ public:
 	}
 };
 
-extern KEYMANAGER Keymanager;
-extern HINSTANCE g_hInstance;
-extern HWND g_hWnd;
 extern std::function<void()> buttonfunc;
+//extern HINSTANCE g_hInstance;
+extern HWND g_hWnd;
 
 //typedef enum
 //{

@@ -61,6 +61,7 @@ class Game :public Messager
 	bool ifsend = false;
 	HWND hbutton;
 	bool ifplay = true;
+	KEYMANAGER* Keymanager;
 public:
 	void music_button();
 	void add_boom(int x, int y);
@@ -125,7 +126,7 @@ void Game::tick(Messager* arg, Args... args)
 	if (time == 950)
 	{
 		playSound(teach_s, 0);
-		Keymanager.Register(&Game::keyevent, this);
+		Keymanager->Register(&Game::keyevent, this);
 		state = IFTEACH;
 		time = -1;
 	}

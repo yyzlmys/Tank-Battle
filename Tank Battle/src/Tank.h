@@ -42,6 +42,7 @@ class Tank :public GameObject
 	bool ifpaintscore = false;
 	std::vector<Boom*> booms = std::vector<Boom*>(5, nullptr);
 	static struct SHAPE tkshape[4];
+	static KEYMANAGER* Keymanager;
 public:
 	static enum CAMP
 	{
@@ -121,6 +122,11 @@ void Tank::check_booms(Game* game, GameObject* arg, Args... args)
 			{
 			case GameObject::TANK:
 				Send(Messager::HITYOU, arg);
+				if (!getifdraw())
+				{
+					Send(Messager::RESTART, arg, args...);
+					Receive(Messager::RESTART);
+				}
 				break;
 			case GameObject::TARGET:
 				Send(Messager::RESTART, arg, args...);

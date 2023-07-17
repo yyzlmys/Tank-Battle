@@ -5,6 +5,8 @@
 #include"acllib.h"
 #include<string>
 
+KEYMANAGER* Tank::Keymanager = KEYMANAGER::getInstance();
+
 struct SHAPE Tank::tkshape[4] =
 {
 	{
@@ -97,7 +99,7 @@ void Tank::Receive(Messager::MESSAGE message)
 		restart();
 		break;
 	case EXPLODE:
-		Keymanager.Cancel(this);
+		Keymanager->Cancel(this);
 		ifpaintscore = false;
 		clearbullet();
 		setifdraw(false);
@@ -105,7 +107,7 @@ void Tank::Receive(Messager::MESSAGE message)
 		lastpos = new Lastpos(x_start, y_start, gesture_start, p_x_start, p_y_start);
 		break;
 	case HITYOU:
-		Keymanager.Cancel(this);
+		Keymanager->Cancel(this);
 		setifdraw(false);
 		lastpos = new Lastpos(getx(), gety(), getgst(), p_x, p_y);
 		break;
@@ -247,11 +249,12 @@ void Tank::setkey(int forward_key, int backward_key, int left_key, int right_key
 
 void Tank::restart()
 {
+	Keymanager = KEYMANAGER::getInstance();
 	if (getifdraw()) return;
 	setx(lastpos->x_last); sety(lastpos->y_last); setgst(lastpos->gesture_last);
 	p_x = lastpos->p_x_last; p_y = lastpos->p_y_last; 
 	clearbullet();
-	Keymanager.Register(&Tank::keyevent, this);
+	Keymanager->Register(&Tank::keyevent, this);
 	setifdraw(true);
 }
 

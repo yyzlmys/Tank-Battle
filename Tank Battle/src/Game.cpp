@@ -24,6 +24,7 @@ void Game::init()
 	loadImage("images/explode.jpg", &explode_i);
 	loadSound("music/explode.mp3", &explode_s);
 	buttonfunc = std::bind(&Game::music_button, this);
+	Keymanager = KEYMANAGER::getInstance();
 }
 
 void Game::loadscene()
@@ -70,14 +71,14 @@ void Game::Receive(Messager::MESSAGE message)
 		state = RED_WIN;
 		stopSound(playing);
 		playSound(win, 0);
-		Keymanager.Register(&Game::keyevent, this);
+		Keymanager->Register(&Game::keyevent, this);
 		break;
 	case GREENWIN:
 		DestroyWindow(hbutton);
 		state = GREEN_WIN;
 		stopSound(playing);
 		playSound(win, 0);
-		Keymanager.Register(&Game::keyevent, this);
+		Keymanager->Register(&Game::keyevent, this);
 		break;
 	case RESTART:
 		stopSound(teach_s);
@@ -98,7 +99,7 @@ void Game::keyevent(int key, int event)
 			if (state == IFTEACH)
 			{
 				state = PLAYING;
-				Keymanager.Cancel(this);
+				Keymanager->Cancel(this);
 				return;
 			}
 		}
@@ -115,7 +116,7 @@ void Game::keyevent(int key, int event)
 			if (state == TEACH)
 			{
 				state = PLAYING;
-				Keymanager.Cancel(this);
+				Keymanager->Cancel(this);
 				return;
 			}
 		}

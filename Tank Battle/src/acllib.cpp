@@ -63,9 +63,8 @@ int Setup(void);
 const char g_wndClassName[] = "ACL_WND_CLASS";
 const char g_libName[] = "ACLLIB";
 
-KEYMANAGER Keymanager;
 std::function<void()> buttonfunc;
-
+KEYMANAGER* KEYMANAGER::Keymanager = new KEYMANAGER;
 HINSTANCE g_hInstance;
 HWND g_hWnd = NULL;
 HDC g_hmemdc = NULL;
@@ -102,15 +101,12 @@ CharEventCallback g_char = NULL;
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
-//
 void acl_error(char *errStr)
 {
 	MessageBoxA(g_hWnd,errStr,g_libName,MB_ICONERROR);
 	exit(0);
 }
 
-
-//
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine, int iCmdShow)
 {
 	MSG          msg;
@@ -151,10 +147,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLine,
 	return msg.wParam;
 }
 
-//
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 { 
 	int res;
+	KEYMANAGER* Keymanager = KEYMANAGER::getInstance();
 	switch (message) 
 	{
 	case WM_CREATE:
@@ -210,11 +206,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 
 	case WM_KEYDOWN:
-		Keymanager.DoKeyevent((int)wParam, KEY_DOWN);
+		Keymanager->DoKeyevent((int)wParam, KEY_DOWN);
 		break;
 
 	case WM_KEYUP:
-		Keymanager.DoKeyevent((int)wParam, KEY_UP);
+		Keymanager->DoKeyevent((int)wParam, KEY_UP);
 		break;
 
 	case WM_LBUTTONDOWN:
@@ -354,12 +350,10 @@ void msgBox(const char title[],const char text[],int flag)
 }
 
 
-//
 void updatePen();
 void updateBrush();
 void updateFont();
 
-//
 void beginPaint()
 {
 	HDC hdc;
